@@ -62,9 +62,9 @@ select::-ms-expand{
     background: #27272a;
     cursor: pointer;
     pointer-events: none;
-    transition: 0.25 all ease;
+    transition: 0.25s all ease;
 }
 
 .select:hover::after{
-    background: #6556CD;
+    color: #6556CD;
 }

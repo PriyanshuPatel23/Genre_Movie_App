@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/axios";
-import noimage from "../../../public/noimage.jpg"
+import noimage from "../../assets/noimage.jpg"
 
 const Topnav = () => {
   const [query, setQuery] = useState("");
@@ -26,7 +26,7 @@ const Topnav = () => {
         <input
           onChange={(e) => setQuery(e.target.value)}
           value={query}
-          className="w-[50%] text-zinc-200 p-5 text-xl outline-none border-none bg-transparent"
+          className="min-w-[50%] text-zinc-200 p-5 text-xl outline-none border-none bg-transparent"
           type="text"
           placeholder="Search here "
         />
@@ -37,7 +37,7 @@ const Topnav = () => {
           ></i>
         )}
 
-        <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[99%] overflow-auto">
+        <div className="absolute min-w-[50%] max-h-[50vh] bg-zinc-200 top-[99%] overflow-auto">
           {search.map((s, i) => (
             <Link
               key={i}

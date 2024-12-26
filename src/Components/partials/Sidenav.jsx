@@ -13,23 +13,23 @@ const Sidenav = () => {
           <h1 className="text-white font-semibold text-xl mt-10 mb-5">
             New Feeds
           </h1>
-          <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+          <Link to={`/trending`} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
             <i className="ri-fire-fill mr-1"></i>
             Trending
           </Link>
-          <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+          <Link to={`/popular`} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
             <i className="ri-bard-fill mr-2"></i>
             Popular
           </Link>
-          <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+          <Link to={`/movie`} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
             <i className="ri-movie-2-fill mr-2"></i>
             Movies
           </Link>
-          <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+          <Link to={`/tv`} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
             <i className="ri-tv-2-fill mr-2"></i>
             Tv Shows
           </Link>
-          <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
+          <Link to={`/person`} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5">
             <i className="ri-team-fill mr-2"></i>
             People
           </Link>
