@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/axios";
-import noimage from "../../assets/noimage.jpg"
+import noimage from "../../assets/noimage.jpg";
 
 const Topnav = () => {
   const [query, setQuery] = useState("");
@@ -37,13 +37,24 @@ const Topnav = () => {
           ></i>
         )}
 
-        <div className="absolute min-w-[50%] max-h-[50vh] bg-zinc-200 top-[99%] overflow-auto">
+        <div className="z-[100] absolute min-w-[50%] max-h-[50vh] bg-zinc-200 top-[99%] overflow-auto">
           {search.map((s, i) => (
             <Link
+              to={`/${s.media_type || title}/details/${s.id}`}
               key={i}
               className="hover:text-black hover:bg-zinc-300 font-semibold text-zinc-600 duration-300 w-[100%] p-10 flex justify-start items-center border-b-2 border-zinc-100"
             >
-              <img className="w-[10vh] h-[10vh] object-cover rounded mr-5 shadow" src={s.backdrop_path || s.profile_path ? `https://image.tmdb.org/t/p/original/${s.backdrop_path || s.profile_path}` : noimage} alt="" />
+              <img
+                className="w-[10vh] h-[10vh] object-cover rounded mr-5 shadow"
+                src={
+                  s.backdrop_path || s.profile_path
+                    ? `https://image.tmdb.org/t/p/original/${
+                        s.backdrop_path || s.profile_path
+                      }`
+                    : noimage
+                }
+                alt=""
+              />
               <span>
                 {s.original_title || s.name || s.title || s.original_name}
               </span>

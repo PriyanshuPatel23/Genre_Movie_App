@@ -9,7 +9,6 @@ import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const tvShowss = () => {
-    
   const [duration, setDuration] = useState("day");
   const [tvShows, settvShowss] = useState([]);
   const [category, setCategory] = useState("airing_today");
@@ -79,7 +78,7 @@ const tvShowss = () => {
         hasMore={true}
         loader={<Loading />}
       >
-        <Cards data={tvShows} title={category} />
+        <Cards data={tvShows} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (

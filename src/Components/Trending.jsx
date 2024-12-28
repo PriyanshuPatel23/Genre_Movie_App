@@ -12,14 +12,16 @@ const Trending = () => {
   const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState([]);
   const [category, setCategory] = useState("all");
-  const [hasMore, setHasMore] = useState(true)
+  const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
   document.title = "GENRE || TRENDING " + category.toUpperCase();
 
   const getTrending = async () => {
     try {
-      const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`);
+      const { data } = await axios.get(
+        `/trending/${category}/${duration}?page=${page}`
+      );
       if (data.results.length > 0) {
         setTrending((prevState) => [...prevState, ...data.results]);
         setPage(page + 1);
@@ -35,11 +37,11 @@ const Trending = () => {
     if (trending.length === 0) {
       getTrending();
     } else {
-      setPage(1)
+      setPage(1);
       setTrending([]);
       getTrending();
     }
-  }
+  };
 
   useEffect(() => {
     refreshHandler();

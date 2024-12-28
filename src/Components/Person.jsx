@@ -18,7 +18,7 @@ const Person = () => {
   document.title = "GENRE || Person " + category.toUpperCase();
 
   const getPerson = async () => {
-    try { 
+    try {
       const { data } = await axios.get(`/person/${category}?page=${page}`);
       if (data.results.length > 0) {
         setPerson((prevState) => [...prevState, ...data.results]);
@@ -67,12 +67,12 @@ const Person = () => {
         hasMore={true}
         loader={<Loading />}
       >
-        <Cards data={person} title={category} />
+        <Cards data={person} title="person" />
       </InfiniteScroll>
     </div>
   ) : (
     <Loading />
-  );;
+  );
 };
 
 export default Person;
